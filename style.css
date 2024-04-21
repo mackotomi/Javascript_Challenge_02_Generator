@@ -48,6 +48,10 @@ form{
     transition: ease-in 0.1s;
 }
 
+.clicked {
+    transform: scale(1.2); /* Scale up by 20% when clicked */
+}
+
 .dice:hover{
     scale: 0.9;
     transition: ease-out 0.1s;
