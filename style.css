@@ -4,6 +4,15 @@
     box-sizing: border-box;
 }
 
+@keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+}
+
 .help, .back{
     position: fixed;
     top: 2rem;
@@ -49,7 +58,8 @@ form{
 }
 
 .clicked {
-    transform: scale(1.2); /* Scale up by 20% when clicked */
+    /* transform: scale(1.2); Scale up by 20% when clicked */
+    animation: rotate 0.2s linear;
 }
 
 .dice:hover{
