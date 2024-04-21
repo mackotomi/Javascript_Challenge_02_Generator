@@ -13,13 +13,22 @@
 .help__guide{
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    min-width: 500px;
 }
 
 .help__guide p{
-    max-width: 600px;
-    font-size: 2rem;
+    max-width: 90%;
+    font-size: 1.6rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.help__guide h1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2.3  rem;
+    padding-bottom: 1rem;
 }
 
 form{
