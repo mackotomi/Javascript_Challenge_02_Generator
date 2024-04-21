@@ -4,16 +4,44 @@
     box-sizing: border-box;
 }
 
+.help, .back{
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+}
+
+.help__guide{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.help__guide p{
+    max-width: 600px;
+    font-size: 2rem;
+}
+
 form{
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: .2rem;
+    gap: .6rem;
 }
 
 .generator, .confirmButton{
     padding: 1rem;
+}
+
+.dice{
+    cursor: pointer;
+    transition: ease-in 0.1s;
+}
+
+.dice:hover{
+    scale: 0.9;
+    transition: ease-out 0.1s;
 }
 
 .confirmButton{
