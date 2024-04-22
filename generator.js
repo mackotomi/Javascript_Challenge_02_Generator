@@ -1,5 +1,7 @@
 // Animation trigger for dice roll if clicked for representing the roll for random new key.
-document.querySelector('.dice').addEventListener('click', function() {
+let diceIcon = document.querySelector('.dice');
+
+diceIcon.addEventListener('click', function() {
     this.classList.toggle('clicked');
         if (this.classList.contains('clicked')) {
             setTimeout(() => {
@@ -32,8 +34,15 @@ keyLength = keySplitArray.length
 
 let x = Math.floor(Math.random() * keyLength);
 
-// for (let index = keyLength; index <= 62;) {
-//     console.log(index);
-// }
+function keyIndexRoll(){
+    let roll = Math.floor(Math.random() * keyLength);
+    console.log(roll + ' -> ' +keySplitArray[roll]);
+}
+
+diceIcon.addEventListener('click' , () =>{
+    for (let rolls = 0; rolls <= 10; rolls++) {
+        keyIndexRoll();
+    }
+})
 
 console.log('this number is randomly generated: ' + x);
