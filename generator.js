@@ -1,10 +1,5 @@
 // Animation trigger for dice roll if clicked for representing the roll of random key generated.
 let diceIcon = document.querySelector('.dice');
-let placeholder = document.querySelector('.generator')
-let placeholderValue = placeholder.getAttribute('placeholder');
-console.log(placeholderValue);
-
-
 diceIcon.addEventListener('click', function() {
     this.classList.toggle('clicked');
         if (this.classList.contains('clicked')) {
@@ -13,6 +8,15 @@ diceIcon.addEventListener('click', function() {
             }, 200); // Toggle 'active' class after 200ms
         }
 });
+
+// Target the input for outputing the generated code.
+// Set the attribute with variable of generated code.
+let generatorPlaceholder = document.querySelector('.guide')
+generatorPlaceholder.setAttribute('placeholder','xx');
+
+// This is input placeholder attribute that will be linked to generated output.
+
+console.log(generatorPlaceholder); //check
 
 // This variable contains all letter and numbers with lowercase and uppercase format.
 let keyrange = 'a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z, A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0';
@@ -30,6 +34,7 @@ But that would not teach me to work with arrays
 // The keyrange variable is splitted into separated indexes into array with name keys.
 let keysSplit = [...cleanUp];
 console.log(keysSplit.length);
+
 // The split(); method doesnt worked the way i wanted.
 let keySplitArray = [...keysSplit];
 console.log(keySplitArray);

@@ -48,6 +48,10 @@ form{
     gap: .6rem;
 }
 
+form input[type="text"]{
+    font-size: 1.3rem;
+}
+
 .generator, .confirmButton{
     padding: 1rem;
 }
