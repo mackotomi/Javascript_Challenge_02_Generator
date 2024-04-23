@@ -1,12 +1,16 @@
-// Animation trigger for dice roll if clicked for representing the roll for random new key.
+// Animation trigger for dice roll if clicked for representing the roll of random key generated.
 let diceIcon = document.querySelector('.dice');
+let placeholder = document.querySelector('.generator')
+let placeholderValue = placeholder.getAttribute('placeholder');
+console.log(placeholderValue);
+
 
 diceIcon.addEventListener('click', function() {
     this.classList.toggle('clicked');
         if (this.classList.contains('clicked')) {
             setTimeout(() => {
                 this.classList.remove('clicked');
-            }, 200); // Toggle 'active' class after 100ms
+            }, 200); // Toggle 'active' class after 200ms
         }
 });
 
@@ -36,13 +40,18 @@ let x = Math.floor(Math.random() * keyLength);
 
 function keyIndexRoll(){
     let roll = Math.floor(Math.random() * keyLength);
-    console.log(roll + ' -> ' +keySplitArray[roll]);
+    console.log(roll);
+    // console.log(roll + ' -> ' +keySplitArray[roll]);
 }
 
 diceIcon.addEventListener('click' , () =>{
-    for (let rolls = 0; rolls <= 10; rolls++) {
         keyIndexRoll();
-    }
 })
+
+// diceIcon.addEventListener('click' , () =>{
+//     for (let rolls = 0; rolls <= 10; rolls++) {
+//         keyIndexRoll();
+//     }
+// })
 
 console.log('this number is randomly generated: ' + x);
