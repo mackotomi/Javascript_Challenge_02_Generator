@@ -1,3 +1,6 @@
+// Targeting the dice icon
+let dice = document.querySelector('#dice');
+
 // Animation trigger for dice roll if clicked for representing the roll of random key generated.
 let diceIcon = document.querySelector('#dice');
 diceIcon.addEventListener('click', function() {
@@ -9,11 +12,7 @@ diceIcon.addEventListener('click', function() {
         }
 });
 
-
-let dice = document.querySelector('#dice');
-console.log(dice);
 // Declaring the keyset for generator to pick from..
-
 const keyboardArray = [
     // Uppercase letters
     'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
@@ -27,10 +26,12 @@ const keyboardArray = [
     '!','?','@','.','/',',','=','+'
 ];
 
-console.log(keyboardArray);
+// Keyboard array count
 let keyboardLength = keyboardArray.length;
-console.log('This number is .length of keyboard array: ' + keyboardLength);
-console.log();
+
+// Array check with lenght
+// console.log(keyboardArray);
+// console.log('This number is .length of keyboard array: ' + keyboardLength);
 
 // Empty array for extracted keys.
 let keyboardArrayExctract = [];
@@ -53,8 +54,8 @@ function letsroll() {
     console.log('Warning: The user must write this code if he wants to send an email: ' + keyrequest);
 }
 
-// For unknown reason, this needs to be here outside to inject the code to the attribute. 
-// After this project, learn the scoping, the scope behavior was the biggest challenge when coding this project.
+// For unknown reason, this needs to be here outside to inject the code to the attribute, why the fuck i have no idea. 
+// After this project, learn the scoping, the scope behavior was the biggest challenge when coding this stuff.
 let keyrequest = letsroll();
 
 
