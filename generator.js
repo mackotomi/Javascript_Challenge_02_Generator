@@ -30,24 +30,22 @@ console.log(keyboardArray);
 let keyboardLength = keyboardArray.length;
 console.log('This number is .length of keyboard array: ' + keyboardLength);
 console.log();
+
+// Empty array for extracted keys.
 let keyboardArrayExctract = [];
-
-
-// This function rolls random number from 0 to Keyboard.Length (10)
-
+// This loop loops 8x times for random number from 0 to Keyboard.Length and pushes them into array
 for (let index = 0; index < 8; index++) {
         keyboardArrayExctract.push(keyboardArray[(Math.trunc(Math.random() * keyboardLength))]);
-}   
+}
 
 // Transforming the array into string and removing the , from the letters.
-
 let keys = keyboardArrayExctract.join();
 keyrequest = keys.replace(/,/g, '');
-generated.innerText = keyrequest;
-console.log('This key is randomly generator from the indexes of array based on the random method that loops 5 times and pushes the index elements based on the random number used as index of the array: ' + keyrequest);
-console.log('The spacing will be done using the letterspace css property later.');
 
-// Target the input for outputing the generated code.
-// Set the attribute with variable of generated code.
+// console.log('This key is randomly generator from the indexes of array based on the random method that loops 5 times and pushes the index elements based on the random number used as index of the array: ' + keyrequest);
+// console.log('The spacing will be done using the letterspace css property later.');
+
+// Target the input attribute placeholder.
+// Set the attribute placeholder content as the keyrequest.
 let keygen = document.querySelector('.keygen')
 keygen.setAttribute('placeholder' , keyrequest);
