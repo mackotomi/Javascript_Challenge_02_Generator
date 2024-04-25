@@ -1,5 +1,5 @@
 let html = document.querySelector('html');
-
+let generated = document.querySelector('.generated');
 // Declaring the keyset for generator to pick from..
 
 const keyboardArray = [
@@ -30,9 +30,9 @@ for (let index = 0; index < 8; index++) {
 
 let keys = keyboardArrayExctract.join();
 keyrequest = keys.replace(/,/g, '');
-html.innerText = keyrequest;
+generated.innerText = keyrequest;
 console.log('This key is randomly generator from the indexes of array based on the random method that loops 5 times and pushes the index elements based on the random number used as index of the array: ' + keyrequest);
-console.log('The spacing will be done using the letterspace css property.');
+console.log('The spacing will be done using the letterspace css property later.');
 
 
 
