@@ -1,5 +1,7 @@
 let html = document.querySelector('html');
 
+// Declaring the keyset for generator to pick from..
+
 const keyboardArray = [
     // Uppercase letters
     'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
@@ -24,10 +26,13 @@ for (let index = 0; index < 8; index++) {
         keyboardArrayExctract.push(keyboardArray[(Math.trunc(Math.random() * keyboardLength))]);
 }   
 
-html.innerText = keyboardArrayExctract;
+// Transforming the array into string and removing the , from the letters.
 
-console.log(keyboardArrayExctract);
-
+let keys = keyboardArrayExctract.join();
+keyrequest = keys.replace(/,/g, '');
+html.innerText = keyrequest;
+console.log('This key is randomly generator from the indexes of array based on the random method that loops 5 times and pushes the index elements based on the random number used as index of the array: ' + keyrequest);
+console.log('The spacing will be done using the letterspace css property.');
 
 
 

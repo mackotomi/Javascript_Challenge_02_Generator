@@ -7,7 +7,7 @@ diceIcon.addEventListener('click', function() {
                 this.classList.remove('clicked');
             }, 200); // Toggle 'active' class after 200ms
         }
-});i
+});
 
 // Target the input for outputing the generated code.
 // Set the attribute with variable of generated code.
