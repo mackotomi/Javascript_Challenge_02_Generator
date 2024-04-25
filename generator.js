@@ -11,8 +11,6 @@ diceIcon.addEventListener('click', function() {
 
 
 let dice = document.querySelector('#dice');
-let html = document.querySelector('html');
-let generated = document.querySelector('.generated');
 console.log(dice);
 // Declaring the keyset for generator to pick from..
 
@@ -24,7 +22,9 @@ const keyboardArray = [
     'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
     'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
     // Numbers 0 to 9
-    '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'
+    '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+    // Special characters
+    '!','?','@','.','/',',','=','+'
 ];
 
 console.log(keyboardArray);
@@ -41,21 +41,20 @@ dice.addEventListener('click' , () =>{
 
 function letsroll() {
     let roll = [];
-    for (let index = 0; index < 5; index++) {
-            console.log('button clicked');
+    for (let index = 0; index < 10; index++) {
+            // console.log('button clicked');
             roll.push(keyboardArray[(Math.trunc(Math.random() * keyboardLength))]);
     }
-    console.log(roll);
     let keys = roll.join();
     let keyrequest = keys.replace(/,/g, '');
-    return keyrequest;
+    console.log(keyrequest);
+    let keygen = document.querySelector('.keygen');
+    keygen.setAttribute('placeholder' , keyrequest);
+    console.log('Warning: The user must write this code if he wants to send an email: ' + keyrequest);
 }
 
-// Why the keyrequest doesnt get updated when dice is clicked that regenerates the code and the return value also
-keyrequest = letsroll();
-console.log(keyrequest);
+// For unknown reason, this needs to be here outside to inject the code to the attribute. 
+// After this project, learn the scoping, the scope behavior was the biggest challenge when coding this project.
+let keyrequest = letsroll();
 
-// Target the input attribute placeholder.
-// Set the attribute placeholder content as the keyrequest.
-let keygen = document.querySelector('.keygen')
-keygen.setAttribute('placeholder' , keyrequest);
+
