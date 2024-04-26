@@ -67,7 +67,7 @@ form{
 #dice{
     cursor: pointer;
     transition: ease-in 0.1s;
-    fill: rgb(53, 53, 53);
+    fill: rgb(33, 33, 33);
 }
 
 .clicked {
@@ -91,7 +91,7 @@ form{
 
 .arrow{
     font-size: 2rem;
-    color: lightgrey;
+    /* color: lightgrey; */
 }
 
 form input[type="text"]{
@@ -99,4 +99,14 @@ form input[type="text"]{
     letter-spacing: .1rem;
     text-align: center;
     font-family: "Roboto",Arial, Helvetica, sans-serif
+}
+
+.keygen[type="text"]{
+    background-color: rgb(25, 255, 25);
+    color: black;
+}
+
+.keypass[type="text"]{
+    background-color: rgb(255, 26, 26);
+    color: black;
 }
