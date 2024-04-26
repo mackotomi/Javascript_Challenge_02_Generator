@@ -29,7 +29,7 @@ const keyboardArray = [
 // Keyboard array count
 let keyboardLength = keyboardArray.length;
 
-// Array check with lenght
+// Just an Array check with Lenght
 // console.log(keyboardArray);
 // console.log('This number is .length of keyboard array: ' + keyboardLength);
 
@@ -43,15 +43,22 @@ dice.addEventListener('click' , () =>{
 function letsroll() {
     let roll = [];
     for (let index = 0; index < 10; index++) {
-            // console.log('button clicked');
-            roll.push(keyboardArray[(Math.trunc(Math.random() * keyboardLength))]);
+        // Math random with Trunc combined * Length number of the array with push to new array roll[];
+        roll.push(keyboardArray[(Math.trunc(Math.random() * keyboardLength))]);
     }
+    // Turning the array into string.
     let keys = roll.join();
+    // Replacing all , with nothing, emptiness.
     let keyrequest = keys.replace(/,/g, '');
+    // Printing for check what we get.
     console.log(keyrequest);
+    // Grabbing target element inside the function
     let keygen = document.querySelector('.keygen');
+    // Setting the element attribute content to generated key.
     keygen.setAttribute('placeholder' , keyrequest);
-    console.log('Warning: The user must write this code if he wants to send an email: ' + keyrequest);
+    // Printing warning message.
+    console.log('Warning: The user must write this code if he or she wants to send an email: → ' + keyrequest);
+    console.log(); // Self note: Wasnt sure if it was ok to add empty console to add line that divides console.log messages, felt hacky, but after some reading, it is common and totaly fine, fine, fine... moving on
 }
 
 // For unknown reason, this needs to be here outside to inject the code to the attribute, why the fuck i have no idea. 
