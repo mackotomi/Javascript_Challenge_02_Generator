@@ -1,3 +1,8 @@
+"use strict";
+
+// Regenerated code value storage.
+let keyInstance = '';
+
 // Targeting the dice icon
 let dice = document.querySelector('#dice');
 
@@ -52,6 +57,7 @@ function letsroll() {
     let keyrequest = keys.replace(/,/g, '');
     // Printing for check what we get.
     console.log(keyrequest);
+    keyInstance = keyrequest;
     // Grabbing target element inside the function
     let keygen = document.querySelector('.keygen');
     // Setting the element attribute content to generated key.
@@ -61,8 +67,8 @@ function letsroll() {
     console.log(); // Self note: Wasnt sure if it was ok to add empty console to add line that divides console.log messages, felt hacky, but after some reading, it is common and totaly fine, fine, fine... moving on
 }
 
-// For unknown reason, this needs to be here outside to inject the code to the attribute, why the fuck i have no idea. 
-// After this project, learn the scoping, the scope behavior was the biggest challenge when coding this stuff.
-let keyrequest = letsroll();
+// Run the function with page load, this makes the generated code be regenerated with reload and initiates code value be presented immediately..
+letsroll();
 
+console.log(keyInstance);
 
