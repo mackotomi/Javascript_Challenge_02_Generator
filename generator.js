@@ -70,5 +70,17 @@ function letsroll() {
 // Run the function with page load, this makes the generated code be regenerated with reload and initiates code value be presented immediately..
 letsroll();
 
+// This is instance of the regenerated key code and will be used as comparison for if statement, checking the keyInstance if == the user typed key.
 console.log(keyInstance);
+// Target send button
+let sendButton = document.querySelector('.confirmButton');
+// Temporarily disable send button
+sendButton.disabled = true;
+let keypass = document.querySelector('.keypass');
+let keypassValue = keypass.value;
+console.log(keypassValue);
 
+// This part will include checking if the input is not empty and that there is really 10 characters included.
+// If there is 10 characters included, check the characters and compare them to the keyInstance.
+// If the characters are equal, green outline the input, other wise keep it red color.
+// If the character are equal, allows to use the send button.
