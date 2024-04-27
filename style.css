@@ -43,9 +43,21 @@ h1,h2,h3,h4,h5,h6,p,span,a{
     padding-bottom: 1rem;
 }
 
+h1{
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+    font-size: 1.3rem;
+    padding-bottom: .3rem;
+}
+
+p{
+    padding-top: .3rem;
+    font-size: .8rem;
+}
+
 form{
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -88,6 +100,10 @@ form{
 .generated{
     font-size: 2rem;
     letter-spacing: .3rem;
+}
+
+button{
+    background-color: greenyellow;
 }
 
 .arrow{
