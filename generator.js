@@ -113,8 +113,8 @@ keyUserInput.addEventListener('input' , () =>{
 });
 
 // Challenge finished after 7 days.
-// Honestly, i cant believe i was able to finish, im really proud of myself.
-// It may be considered as an project, but it was not..
+// Honestly, i cant believe i was able to finish it, im really proud of myself, pat pat lol.
+// It may be considered as an easy project, but it was not..
 
 /*
 Summary: 
