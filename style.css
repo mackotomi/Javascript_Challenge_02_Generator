@@ -13,7 +13,7 @@ h1,h2,h3,h4,h5,h6,p,span,a{
       transform: rotate(0deg);
     }
     to {
-      transform: rotate(360deg);
+      transform: rotate(-360deg);
     }
 }
 
@@ -103,11 +103,11 @@ form input[type="text"]{
 }
 
 .keygen[type="text"]{
-    background-color: rgb(25, 255, 25);
+    background-color: white;
     color: black;
 }
 
 .keypass[type="text"]{
-    background-color: rgb(255, 26, 26);
+    /* background-color: rgb(255, 26, 26); */
     color: black;
 }

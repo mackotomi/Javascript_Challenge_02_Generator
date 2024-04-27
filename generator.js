@@ -17,7 +17,7 @@ diceIcon.addEventListener('click', function() {
         }
 });
 
-// Declaring the keyset for generator to pick from..
+// Declaring the keyset array for the generator to pick from..
 const keyboardArray = [
     // Uppercase letters
     'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
@@ -31,21 +31,12 @@ const keyboardArray = [
     '!','?','@','.','/',',','=','+'
 ];
 
-// Keyboard array count
+// Keyboard array count stored in variable
 let keyboardLength = keyboardArray.length;
 
-// Just an Array check with Lenght
-// console.log(keyboardArray);
-// console.log('This number is .length of keyboard array: ' + keyboardLength);
-
-// Empty array for extracted keys.
-let keyboardArrayExctract = [];
-// This loop loops 8x times for random number from 0 to Keyboard.Length and pushes them into array
-dice.addEventListener('click' , () =>{
-    letsroll();
-})
-
+// Creating a function that will do all the keyboardArray extraction based on random roll of numbers that are used as the indexes for array.
 function letsroll() {
+    // Empty array init for extracted keys.
     let roll = [];
     for (let index = 0; index < 10; index++) {
         // Math random with Trunc combined * Length number of the array with push to new array roll[];
@@ -67,20 +58,50 @@ function letsroll() {
     console.log(); // Self note: Wasnt sure if it was ok to add empty console to add line that divides console.log messages, felt hacky, but after some reading, it is common and totaly fine, fine, fine... moving on
 }
 
-// Run the function with page load, this makes the generated code be regenerated with reload and initiates code value be presented immediately..
+// Icon target with click event that runs letsroll() function to roll random code.
+dice.addEventListener('click' , () =>{
+    letsroll();
+})
+
+// Run the function with every page load and first visit, this makes the generated code be regenerated with reload and initiates code value be presented immediately when visiting the website..
 letsroll();
 
-// This is instance of the regenerated key code and will be used as comparison for if statement, checking the keyInstance if == the user typed key.
-console.log(keyInstance);
+/*
+Part 02
+Checking what the user types into field, where the regenerated code from part 01 must match.
+*/
+
+// This part will include checking if the input is not empty and that there is really 10 characters.
+// If there is 10 characters, check the characters and compare them to the keyInstance.
+// If the characters are equal, green outline the input, othewise make it red. This is for UX to singalize the user right or wrong idea.
+// If the character are equal, allows to use the send button.
+// If less then 10 characters, disable the send button.
+
+
 // Target send button
 let sendButton = document.querySelector('.confirmButton');
 // Temporarily disable send button
 sendButton.disabled = true;
-let keypass = document.querySelector('.keypass');
-let keypassValue = keypass.value;
-console.log(keypassValue);
+let keyUserInput = document.querySelector('.keypass');
+// Add event listener type of input, when user interacts with the input do something.
+keyUserInput.addEventListener('input' , () =>{
+    // When interacting, console.log the keypass.value content. Tis will log each key typed into the input by user.
+    console.log(keyUserInput.value);
+    // We need to make logic that when 10 keys is typed in, store them in a variable and compare it to the regenerated instance that is always stored in the keyInstance variable.
+    // We compare two variables content if they are equal;
+    // If they are equal, we enable the send button that is stored in variable sendButton
+    // We also check if the characters count is 10, otherwise we will disable the button.
+    if (keyUserInput.value.length === 10) {
+        // console.log(keyUserInput.value);
+        let keyUserInputLimitReached = keyUserInput.value;
+        console.log(keyUserInputLimitReached);
+        // Here we check the key stored in keyUserInputLimitReached by comparing it to the keyInstance and make a logic based on true and false.
+        if (keyUserInputLimitReached === keyInstance) {
+            sendButton.disabled = false;
+        }
+    // Here is logic that runs if the length is not equal to 10. This then disables the button.
+    } else {
+        sendButton.disabled = true;
+    }
+});
 
-// This part will include checking if the input is not empty and that there is really 10 characters included.
-// If there is 10 characters included, check the characters and compare them to the keyInstance.
-// If the characters are equal, green outline the input, other wise keep it red color.
-// If the character are equal, allows to use the send button.
