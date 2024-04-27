@@ -1,5 +1,12 @@
 "use strict";
 
+/*
+Part 01
+Creating array with a set of keys.
+Creating generator function that creates random numbers, uses the random numbers as indexes 
+of an array and poping index values into new array, where the generated key is being generated. 
+*/
+
 // Regenerated code value storage.
 let keyInstance = '';
 
@@ -105,3 +112,15 @@ keyUserInput.addEventListener('input' , () =>{
     }
 });
 
+// Challenge finished after 7 days.
+// Honestly, i cant believe i was able to finish, im really proud of myself.
+// It may be considered as an project, but it was not..
+
+/*
+Summary: 
+I was able to solve this challenge using code, that is so cool-cool-cool :]. 
+Finally, i have something to show when i will try to apply for front end developer jobs, where js is required.
+Lastly, i have learned new things and gained some ++ experience to coding and javascript in general.
+And good job buddy, moving on to next challenges.
+Note: i did not used any GPT code, occasionally i asked how you can to get an idea and from there, i would try to solve with coding it myself.
+*/
